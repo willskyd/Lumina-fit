@@ -1,0 +1,47 @@
+{
+  "expo": {
+    "name": "Lumina Fit",
+    "slug": "lumina-fit",
+    "version": "1.0.0",
+    "scheme": "luminafit",
+    "userInterfaceStyle": "automatic",
+    "orientation": "default",
+    "platforms": ["ios", "android", "web"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.luminafit.app",
+      "config": {
+        "usesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.luminafit.app",
+      "statusBarTranslucent": true
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-notifications",
+      [
+        "expo-secure-store",
+        {
+          "configureAndroidBackup": true,
+          "faceIDPermission": "Allow Lumina Fit to access Face ID for secure sign in."
+        }
+      ],
+      [
+        "expo-video",
+        {
+          "supportsPictureInPicture": true
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "your-eas-project-id"
+      }
+    }
+  }
+}
