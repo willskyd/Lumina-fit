@@ -34,7 +34,7 @@ export interface FitnessClass {
   startTime?: string;
   coverImage: string;
   thumbnail: string;
-  videoUrl: string;
+  videoUrl: string | number;
   instructor: Instructor;
   tags: string[];
 }
@@ -74,6 +74,7 @@ export interface LeaderboardEntry {
   id: string;
   name: string;
   avatar: string;
+  localAvatar?: any;
   points: number;
   streak: number;
   rank: number;
@@ -83,7 +84,9 @@ export interface CommunityPost {
   id: string;
   author: string;
   avatar: string;
+  localAvatar?: any;
   image: string;
+  localImage?: any;
   caption: string;
   likes: number;
   challenge: string;

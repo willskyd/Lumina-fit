@@ -23,7 +23,7 @@ import { useAppTheme } from "../providers/ThemeProvider";
 import { useAppStore } from "../store/useAppStore";
 import type { MainTabParamList, RootStackParamList } from "../navigation/types";
 
-type Props = BottomTabScreenProps<MainTabParamList, "Home">;
+type Props = any;
 
 export function HomeScreen(_: Props) {
   const { theme } = useAppTheme();
@@ -261,7 +261,7 @@ export function HomeScreen(_: Props) {
                   key={plan.id}
                 >
                   <Pressable
-                    onPress={() => playCard(`home-plan-${plan.id}`, planWorkoutMap[plan.id])}
+                    // onPress={() => playCard(`home-plan-${plan.id}`, planWorkoutMap[plan.id])}
                   >
                     <GlassCard>
                       <View className="flex-row items-start justify-between gap-3">

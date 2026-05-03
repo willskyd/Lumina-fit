@@ -16,7 +16,7 @@ const iconMap: Record<string, keyof typeof Ionicons.glyphMap> = {
   Profile: "person"
 };
 
-export function FloatingTabBar({ state, descriptors, navigation }: BottomTabBarProps) {
+export function FloatingTabBar({ state, descriptors, navigation }: any) {
   const { bottom } = useSafeAreaInsets();
   const { theme } = useAppTheme();
 
@@ -32,11 +32,11 @@ export function FloatingTabBar({ state, descriptors, navigation }: BottomTabBarP
     >
       <View style={{ position: "absolute", alignSelf: "center", bottom: 52, zIndex: 10 }}>
         <Pressable
-          onPress={async () => {
+            onPress={async () => {
             await triggerHaptic("soft");
             (navigation.getParent() as any)?.navigate("WorkoutPlayer", {
               workoutId: demoClasses[0].id,
-              autoplay: true
+              autoplay: false
             });
           }}
           style={{

@@ -1,21 +1,37 @@
 {
   "expo": {
     "name": "Lumina Fit",
+    "description": "A premium fitness and wellness app for workouts, progress tracking, and daily routines.",
     "slug": "lumina-fit",
     "version": "1.0.0",
     "scheme": "luminafit",
     "userInterfaceStyle": "automatic",
     "orientation": "default",
-    "platforms": ["ios", "android", "web"],
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "icon": "./assets/images/icon.webp",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.luminafit.app",
+      "buildNumber": "1",
       "config": {
         "usesNonExemptEncryption": false
       }
     },
     "android": {
       "package": "com.luminafit.app",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-foreground.webp",
+        "monochromeImage": "./assets/images/adaptive-monochrome.webp",
+        "backgroundColor": "#0B1F17"
+      },
       "statusBarTranslucent": true
     },
     "web": {
@@ -23,7 +39,26 @@
       "output": "single"
     },
     "plugins": [
-      "expo-notifications",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/notification-icon.webp",
+          "color": "#7ED6A5",
+          "defaultChannel": "general"
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#04100B",
+          "image": "./assets/images/splash-icon.webp",
+          "imageWidth": 200,
+          "dark": {
+            "backgroundColor": "#04100B",
+            "image": "./assets/images/splash-icon.webp"
+          }
+        }
+      ],
       [
         "expo-secure-store",
         {
@@ -40,8 +75,12 @@
     ],
     "extra": {
       "eas": {
-        "projectId": "your-eas-project-id"
+        "projectId": "f6956470-9933-4016-8eb5-b9fe00355917"
       }
-    }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/f6956470-9933-4016-8eb5-b9fe00355917"
+    },
+    "owner": "jsm_movies_app_wills"
   }
 }

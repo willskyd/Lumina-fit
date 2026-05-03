@@ -1,6 +1,8 @@
 {
+  "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
+    "noImplicitAny": false,
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": [
@@ -17,9 +19,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "baseUrl": ".",
     "types": [
-      "nativewind/types"
+      "nativewind/types",
+      "node"
     ]
   },
   "include": [
@@ -29,6 +31,5 @@
   ],
   "exclude": [
     "node_modules"
-  ],
-  "extends": "expo/tsconfig.base"
+  ]
 }

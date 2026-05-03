@@ -23,7 +23,7 @@ import type {
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 const AuthStack = createNativeStackNavigator<AuthStackParamList>();
-const Tab = createBottomTabNavigator<MainTabParamList>();
+const Tab: any = createBottomTabNavigator();
 
 function AuthNavigator() {
   return (

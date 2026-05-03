@@ -59,7 +59,7 @@ export const demoClasses: FitnessClass[] = [
       "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80",
     thumbnail:
       "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
-    videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+    videoUrl: require("../../assets/videos/act1.mp4") as any,
     instructor: instructors[2],
     tags: ["Live", "Cycling", "Power Zones"]
   },
@@ -80,7 +80,7 @@ export const demoClasses: FitnessClass[] = [
       "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80",
     thumbnail:
       "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80",
-    videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    videoUrl: require("../../assets/videos/activity15.mp4") as any,
     instructor: instructors[0],
     tags: ["Strength", "Dumbbells", "Upper Body"]
   },
@@ -101,7 +101,7 @@ export const demoClasses: FitnessClass[] = [
       "https://images.unsplash.com/photo-1518611012118-fb1c5d0c5d01?auto=format&fit=crop&w=1200&q=80",
     thumbnail:
       "https://images.unsplash.com/photo-1518611012118-fb1c5d0c5d01?auto=format&fit=crop&w=800&q=80",
-    videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    videoUrl: require("../../assets/videos/activity5.mp4") as any,
     instructor: instructors[1],
     tags: ["Mobility", "Recovery", "Breathwork"]
   },
@@ -122,7 +122,7 @@ export const demoClasses: FitnessClass[] = [
       "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=1200&q=80",
     thumbnail:
       "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=800&q=80",
-    videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+    videoUrl: require("../../assets/videos/act3.mp4") as any,
     instructor: instructors[0],
     tags: ["HIIT", "Explosive", "Sweat"]
   },
@@ -143,7 +143,7 @@ export const demoClasses: FitnessClass[] = [
       "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80&sat=-10",
     thumbnail:
       "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80&sat=-10",
-    videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    videoUrl: require("../../assets/videos/act2.mp4") as any,
     instructor: instructors[1],
     tags: ["Yoga", "Flexibility", "Mindfulness"]
   },
@@ -165,7 +165,7 @@ export const demoClasses: FitnessClass[] = [
       "https://images.unsplash.com/photo-1486218119243-13883505764c?auto=format&fit=crop&w=1200&q=80",
     thumbnail:
       "https://images.unsplash.com/photo-1486218119243-13883505764c?auto=format&fit=crop&w=800&q=80",
-    videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+    videoUrl: require("../../assets/videos/act7.mp4") as any,
     instructor: instructors[2],
     tags: ["Cardio", "Threshold", "Run"]
   }
@@ -235,6 +235,7 @@ export const leaderboard: LeaderboardEntry[] = [
     name: "Ava Kim",
     avatar:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80",
+    localAvatar: require("../../assets/images/lb1.jpg") as any,
     points: 1680,
     streak: 29,
     rank: 1
@@ -244,6 +245,7 @@ export const leaderboard: LeaderboardEntry[] = [
     name: "Jordan Vale",
     avatar:
       "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80",
+    localAvatar: require("../../assets/images/lb2.jpg") as any,
     points: 1612,
     streak: 24,
     rank: 2
@@ -253,6 +255,7 @@ export const leaderboard: LeaderboardEntry[] = [
     name: "You",
     avatar:
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=200&q=80",
+    localAvatar: require("../../assets/images/lb3.jpg") as any,
     points: 1584,
     streak: 18,
     rank: 3
@@ -262,6 +265,7 @@ export const leaderboard: LeaderboardEntry[] = [
     name: "Noah Reed",
     avatar:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+    localAvatar: require("../../assets/images/lb4.jpg") as any,
     points: 1498,
     streak: 16,
     rank: 4
@@ -274,8 +278,10 @@ export const communityPosts: CommunityPost[] = [
     author: "Elena Mora",
     avatar:
       "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=200&q=80",
+    localAvatar: require("../../assets/images/avatar_elena.jpg") as any,
     image:
       "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1000&q=80",
+    localImage: require("../../assets/images/post1.jpg") as any,
     caption: "Closed the week with a threshold ride and a mobility reset. Private club energy, every single session.",
     likes: 482,
     challenge: "Spring Ascend",
@@ -286,8 +292,10 @@ export const communityPosts: CommunityPost[] = [
     author: "Marcus Lane",
     avatar:
       "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=200&q=80",
+    localAvatar: require("../../assets/images/avatar_marcus.jpg") as any,
     image:
       "https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1000&q=80",
+    localImage: require("../../assets/images/post2.jpg") as any,
     caption: "Week 6 of Signature Recomposition. Best shoulders I have ever had.",
     likes: 318,
     challenge: "Recomp Society",

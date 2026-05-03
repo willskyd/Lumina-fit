@@ -122,7 +122,9 @@ export function ProfileScreen() {
           contentContainerStyle={{ paddingHorizontal: 20, paddingBottom: 170 }}
           showsVerticalScrollIndicator={false}
         >
-          <Pressable onPress={() => playCard("profile-header", "profile-member-reel")}>
+          <Pressable 
+          // onPress={() => playCard("profile-header", "profile-member-reel")}
+          >
             <GlassCard>
               <View className="flex-row items-center justify-between">
                 <View className="flex-1">
@@ -169,7 +171,7 @@ export function ProfileScreen() {
             ].map((item) => (
               <Pressable
                 key={item.label}
-                onPress={() => playCard(`profile-stat-${item.label}`, item.preferredWorkoutId)}
+                // onPress={() => playCard(`profile-stat-${item.label}`, item.preferredWorkoutId)}
                 style={{ flex: 1 }}
               >
                 <GlassCard style={{ flex: 1 }}>

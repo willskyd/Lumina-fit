@@ -3,6 +3,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { useEvent } from "expo";
 import { LinearGradient } from "expo-linear-gradient";
 import { VideoView, useVideoPlayer } from "expo-video";
+import { Asset } from "expo-asset";
 import { useEffect, useMemo, useState } from "react";
 import { ActivityIndicator, Platform, Pressable, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -30,7 +31,7 @@ export function WorkoutPlayerScreen({ navigation, route }: Props) {
     currentPlayer.loop = true;
     currentPlayer.timeUpdateEventInterval = 0.25;
   });
-  const shouldAutoplay = route.params.autoplay ?? true;
+  const shouldAutoplay = route.params.autoplay ?? false;
   const videoSources =
     playbackItem.videoSources && playbackItem.videoSources.length > 0
       ? playbackItem.videoSources
@@ -98,8 +99,9 @@ export function WorkoutPlayerScreen({ navigation, route }: Props) {
       player.muted = Platform.OS === "web" && mutedForAutoplay;
 
       try {
+        const uri = typeof currentSource === "number" ? Asset.fromModule(currentSource).uri : currentSource;
         await player.replaceAsync({
-          uri: currentSource,
+          uri,
           useCaching: true
         });
       } catch (error) {

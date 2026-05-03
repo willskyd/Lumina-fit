@@ -53,5 +53,5 @@ export async function openPlaybackFromCard({
 
   await triggerHaptic(hapticTone);
   setCurrentWorkout(workout);
-  navigation.navigate("WorkoutPlayer", { workoutId: workout.id, autoplay: true });
+  navigation.navigate("WorkoutPlayer", { workoutId: workout.id, autoplay: false });
 }

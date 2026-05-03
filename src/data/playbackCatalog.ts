@@ -2,51 +2,21 @@ import { demoClasses } from "./mockData";
 import type { FitnessClass } from "../types/models";
 
 export type PlaybackItem = FitnessClass & {
-  videoSources?: string[];
+  videoSources?: (string | number)[];
 };
 
 const sampleVideoSources = {
-  blaze: [
-    "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-    "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
-  ],
-  escapes: [
-    "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-    "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
-  ],
-  joyrides: [
-    "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-    "https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
-  ],
-  tears: [
-    "https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
-    "https://storage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4"
-  ],
-  elephants: [
-    "https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-    "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-  ],
-  subaru: [
-    "https://storage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
-    "https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
-  ],
-  fun: [
-    "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-    "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
-  ],
-  meltdowns: [
-    "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
-    "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-  ],
-  bunny: [
-    "https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-    "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
-  ],
-  sintel: [
-    "https://storage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
-    "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
-  ]
-} as const;
+  blaze: [require("../../assets/videos/bigbuckbunny.mp4") as any, require("../../assets/videos/flower.mp4") as any],
+  escapes: [require("../../assets/videos/act8.mp4") as any, require("../../assets/videos/activity14.mp4") as any],
+  joyrides: [require("../../assets/videos/bigbuckbunny.mp4") as any, require("../../assets/videos/sintel_alt.mp4") as any],
+  tears: [require("../../assets/videos/sintel_alt.mp4") as any, require("../../assets/videos/bigbuckbunny.mp4") as any],
+  elephants: [require("../../assets/videos/flower.mp4") as any, require("../../assets/videos/bigbuckbunny.mp4") as any],
+  subaru: [require("../../assets/videos/activity14.mp4") as any, require("../../assets/videos/sintel_alt.mp4") as any],
+  fun: [require("../../assets/videos/flower.mp4") as any, require("../../assets/videos/bigbuckbunny.mp4") as any],
+  meltdowns: [require("../../assets/videos/bigbuckbunny.mp4") as any, require("../../assets/videos/bigbuckbunny.mp4") as any],
+  bunny: [require("../../assets/videos/bigbuckbunny.mp4") as any, require("../../assets/videos/flower.mp4") as any],
+  sintel: [require("../../assets/videos/sintel_alt.mp4") as any, require("../../assets/videos/flower.mp4") as any]
+};
 
 const cyclingInstructor = demoClasses.find((item) => item.category === "cycling")?.instructor ?? demoClasses[0].instructor;
 const strengthInstructor = demoClasses.find((item) => item.category === "strength")?.instructor ?? demoClasses[1].instructor;
@@ -84,7 +54,7 @@ function createClip({
   thumbnail: string;
   instructor: FitnessClass["instructor"];
   tags: string[];
-  videoSources: readonly string[];
+  videoSources: readonly (string | number)[];
 }): PlaybackItem {
   return {
     id,

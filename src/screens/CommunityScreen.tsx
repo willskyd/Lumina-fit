@@ -52,7 +52,7 @@ export function CommunityScreen() {
                   {leaderboard.map((entry) => (
                     <Pressable
                       key={entry.id}
-                      onPress={() => playCard(`community-leaderboard-${entry.id}`, "community-leaderboard-burn")}
+                      // onPress={() => playCard(`community-leaderboard-${entry.id}`, "community-leaderboard-burn")}
                     >
                       <GlassCard>
                         <View className="flex-row items-center gap-4">
@@ -65,7 +65,7 @@ export function CommunityScreen() {
                             </Text>
                           </View>
                           <Image
-                            source={{ uri: entry.avatar }}
+                            source={entry.localAvatar ? entry.localAvatar : { uri: entry.avatar }}
                             style={{ width: 52, height: 52, borderRadius: 26 }}
                           />
                           <View className="flex-1">
@@ -99,10 +99,10 @@ export function CommunityScreen() {
               style={{ marginBottom: 18 }}
             >
               <GlassCard padded={false}>
-                <Image source={{ uri: item.image }} style={{ width: "100%", height: 240 }} />
+                    <Image source={item.localImage ? item.localImage : { uri: item.image }} style={{ width: "100%", height: 240 }} />
                 <View className="p-5">
                   <View className="flex-row items-center gap-3">
-                    <Image source={{ uri: item.avatar }} style={{ width: 44, height: 44, borderRadius: 22 }} />
+                    <Image source={item.localAvatar ? item.localAvatar : { uri: item.avatar }} style={{ width: 44, height: 44, borderRadius: 22 }} />
                     <View className="flex-1">
                       <Text style={[theme.fonts.bodyBold, { color: theme.colors.text }]} className="text-base">
                         {item.author}
